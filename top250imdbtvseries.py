@@ -6,8 +6,7 @@ from bs4 import BeautifulSoup
 
 
 def Tvseries(filename,path):
-
-    titlelist=[]
+    os.chdir(path)
     connect=requests.get("""https://www.imdb.com/chart/toptv/?ref_=nv_tvv_250""")
     soup=BeautifulSoup(connect.text,'html.parser')
     elements_title=soup.find_all('td',attrs='titleColumn')
@@ -21,13 +20,10 @@ def Tvseries(filename,path):
         Tv_series[title]=Tv_series.get(title,rating)
 
 
-    os.chdir(path)
     with open (filename,'w') as newfile:
         Writer=csv.writer(newfile)
         for series,Ratings in Tv_series.items():
             Writer.writerow([series,Ratings])
-        newfile.close()
-
 
 
 if __name__ == "__main__":
