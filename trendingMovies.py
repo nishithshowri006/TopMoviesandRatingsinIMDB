@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 def movies(filename,path):
 
     os.chdir(path)
-    titlelist=[]
     connect=requests.get(""" https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm """)
     soup=BeautifulSoup(connect.text,'html.parser')
     elements_title=soup.find_all('td',attrs='titleColumn')
