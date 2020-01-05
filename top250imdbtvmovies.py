@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 def movies(filename,path):
    
     os.chdir(filename)
-    titlelist=[]
     connect=requests.get(""" https://www.imdb.com/chart/top/?ref_=nv_mv_250 """)
     soup=BeautifulSoup(connect.text,'html.parser')
     elements_title=soup.find_all('td',attrs='titleColumn')
@@ -25,7 +24,6 @@ def movies(filename,path):
         Writer=csv.writer(newfile)
         for Movie,Ratings in Movies.items():
             Writer.writerow([Movie,Ratings])
-        newfile.close()
     
 
 
