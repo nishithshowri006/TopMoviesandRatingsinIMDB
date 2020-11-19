@@ -1,21 +1,10 @@
 # TvShowsandMovies-IMDB
-These files gives you csv files of top rated movies,shows and trending movies,shows
 
-#top250imdbtvseries.py
-When you run this file it gives you a csv file of IMDB-TopRatedTvSeies
-https://www.imdb.com/chart/toptv/?ref_=nv_tvv_250
+This script will create 4 csv files trending_movies,trending_series,top_250_movies,top_250_series.
+Requirements to run this script are bs4,requests,lxml. You can open terminal and run
 
+```
+pip install -r requirements.txt
 
-#top250imdbtvmovies.py
-When you run this file it gives you a csv file of IMDB-TopRatedMovies
-https://www.imdb.com/chart/top/?ref_=nv_mv_250
-
-
-#trendingMovies.py
-When you run this file it gives you a csv file of IMDB-MostPopularMovies
-https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm
-
-
-#trendingTvseries.py
-When you run this file it gives you a csv file of IMDB-MostPopularTvShows
-https://www.imdb.com/chart/tvmeter/?ref_=nv_tvv_mptv
+```
+The csv will files will be stored in the current directory where you run the program.
